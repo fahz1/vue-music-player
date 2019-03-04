@@ -38,6 +38,7 @@
   import PlayerControlsBars from './components/PlayerControlsBars.vue'
   import PlayerInfoPanel from './components/PlayerInfoPanel.vue'
   import PlayerSearchBar from './components/PlayerSearchBar.vue'
+
   export default {
     components: {
       PlayerTitleBar,
@@ -110,7 +111,7 @@
               this.skip('next')
             }
           }
-        })
+        });
       })
     },
     methods: {

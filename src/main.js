@@ -5,6 +5,7 @@ import Player from './Player.vue'
 
 import VueHowler from 'vue-howler'
 import router from './router'
+import {Howl, Howler} from 'howler'
 
 
 Vue.use(Vuetify)
