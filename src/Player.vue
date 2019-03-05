@@ -38,7 +38,7 @@
   import PlayerControlsBars from './components/PlayerControlsBars.vue'
   import PlayerInfoPanel from './components/PlayerInfoPanel.vue'
   import PlayerSearchBar from './components/PlayerSearchBar.vue'
-  import Test from './components/test.vue'
+  import Test from './components/Test.vue'
 
 
   export default {
