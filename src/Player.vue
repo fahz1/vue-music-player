@@ -29,6 +29,7 @@
         </player-search-bar>
       </v-container>
     </v-content>
+    <Test></Test>
   </v-app>
 </template>
 
