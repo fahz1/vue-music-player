@@ -38,6 +38,8 @@
   import PlayerControlsBars from './components/PlayerControlsBars.vue'
   import PlayerInfoPanel from './components/PlayerInfoPanel.vue'
   import PlayerSearchBar from './components/PlayerSearchBar.vue'
+  import Test from './components/test.vue'
+
 
   export default {
     components: {
@@ -45,7 +47,8 @@
       PlayerPlaylistPanel,
       PlayerControlsBars,
       PlayerInfoPanel,
-      PlayerSearchBar
+      PlayerSearchBar,
+      Test
     },
     data () {
       return {
@@ -114,6 +117,13 @@
         });
       })
     },
+
+      setup: function () {
+        mySound.setVolume(0.1);
+        mySound.play();
+      },
+
+
     methods: {
       selectTrack (track) {
         this.selectedTrack = track
@@ -135,12 +145,26 @@
           return
         } else {
           track.play()
+          function setup(){
+          createCanvas(640,480);
+          }
+
+          // function draw() {
+          //   if(selectedTrack!= 0) {
+          //     fill(255);
+          //   } else {
+          //     fill(0);
+          //   }
+          //   ellipe(100, 100, 80, 80);
+          // }
         }
 
         this.selectedTrack = this.playlist[index]
         this.playing = true
         this.index = index
       },
+
+
       pause () {
         this.currentTrack.howl.pause()
         this.playing = false
@@ -188,6 +212,7 @@
           track.seek((track.duration() / 100) * percents)
         }
       }
+
     }
   }
 </script>
