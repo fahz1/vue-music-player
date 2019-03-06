@@ -30,7 +30,7 @@
       </v-container>
     </v-content>
     <Test></Test>
-    <TestAn></TestAn>
+    <!-- <TestAn></TestAn> -->
   </v-app>
 </template>
 
@@ -150,18 +150,7 @@
           return
         } else {
           track.play()
-          // function setup(){
-          // createCanvas(640,480);
-          // }
 
-          // function draw() {
-          //   if(selectedTrack!= 0) {
-          //     fill(255);
-          //   } else {
-          //     fill(0);
-          //   }
-          //   ellipe(100, 100, 80, 80);
-          // }
         }
 
         this.selectedTrack = this.playlist[index]

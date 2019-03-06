@@ -1,17 +1,7 @@
 <template>
   <div>
-    <!-- <vue-p5 v-on="{ setup, draw, keypressed }"></vue-p5> -->
-    <p>
-      <!-- Red: {{ red }} <br/>
-      Green: {{ green }} <br/>
-      Blue: {{ blue }} <br/> -->
-      test component
-    </p>
-      <!-- <p>
-      Press <button @click="toggleRed()">button</button> to toggle red color <br/>
-      Press <code>g</code> to toggle green color <br/>
-      Use mouse to draw lines <br/>
-    </p> -->
+    <vue-p5 v-on="{ setup}"></vue-p5>
+
   </div>
 </template>
 
@@ -22,27 +12,52 @@ export default {
   components: {
     "vue-p5": VueP5
   },
+return {
   data: () => ({
-    red: 255,
-    green: 0,
-    blue: 0,
-    lines: [],
-    backgroundImage: null
-  }),
+     xspacing: 16,
+     w,
+     theta: 0.0,
+     amplitude: 75.0,
+     period: 500.0,
+     dx:null,
+     yvalues: [],
+
+     backgroundImage: null
+   }),
+}
   methods: {
     preload(sketch) {
       this.backgroundImage = sketch.loadImage("static/p5js.png");
     },
     setup(sketch) {
-      sketch.createCanvas(400, 400);
+      sketch.createCanvas(1000, 400);
+      // w = w + 16;
+      dx = (TWO_PI / period) * xspacing;
+      yvalues = new Array(floor(w / xspacing));
     },
-    sketch(sketch) {
-      sketch.draw = () => {
-        this.blue = (this.blue + 3) % 255;
-        const { red, green, blue } = this;
-        sketch.background(red, green, blue);
-      };
+    draw() {
+      background(0);
+      calcWave();
+      renderWave();
     },
+
+    calcWave() {
+      theta += 0.02;
+      let x = theta;
+      for (let i = 0; i < yvalues.length; i++) {
+        yvalues[i] = sin(x) * amplitude;
+        x += dx;
+      }
+    },
+
+  renderWave() {
+    noStroke();
+    fill(255);
+    for (let x = 0; x < yvalues.length; x++) {
+      ellipse(x * xspacing, height / 2 + yvalues[x], 16, 16);
+    }
+  }
+
   }
 };
 </script>
