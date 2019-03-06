@@ -35,7 +35,7 @@ export default {
       this.yvalues = new Array(Math.floor(this.w / this.xspacing));
     },
     draw(sketch) {
-      sketch.background('blue');
+      sketch.background('black');
 
       //calcWave
       this.theta += 0.02;

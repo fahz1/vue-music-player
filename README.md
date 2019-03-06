@@ -1,4 +1,10 @@
 # vue-music-player
+This Project is still under development.
+Libraries used:
+Howler.js
+Vuetify.js
+p5.js
+
 
 ## Project setup
 ```

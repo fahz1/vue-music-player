@@ -1,37 +1,42 @@
-<!-- <template>
-   <div v-anime="{ rotate: '1turn',
-   backgroundColor: '#FFF',
-   duration: 2000,
-   loop: true }">
-
+<template>
+  <div style="margin-top: 72px;">
+    <b-container>
+      <div ref="canvas"></div>
+      <b-btn>Change color</b-btn>
+    </b-container>
   </div>
 </template>
-
 <script>
-import {VueAnime} from 'vue-anime'
-// Vue.use(VueAnime)
-
 export default {
-  name: "my-component",
-  data() {
-    return {};
+  data: function () {
+    return {
+      script: null,
+      ps: null,
+      x: 0,
+      y: 0,
+      canvas: null
+    }
   },
+  mounted () {
+    this.script = p => {
+      this.x = 100
+      this.y = 100
 
-  mounted (){
-    this
-      .$anime
-      .timeline()
-      .add({
-        targets,
-        translateX: 250,
-        easing: 'easeOutExpo',
-      })
-      .add({
-        targets,
-        translateX: 250,
-        easing: 'easeOutExpo',
-      });
-  },
+      p.setup = _ => {
+        this.canvas = p.createCanvas(600, 420)
+        this.canvas.parent(this.$refs.canvas)
+        p.frameRate(60)
+      }
+
+      p.draw = _ => {
+        p.background(0)
+        p.fill(255)
+        p.rect(this.x, this.y, 50, 50)
+      }
+    }
+    const P5 = require('p5')
+    this.ps = new P5(this.script)
+    console.log(this.ps)
+  }
 }
-
-</script> -->
+</script>
