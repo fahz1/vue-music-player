@@ -18,6 +18,7 @@
         @toggleshuffle="toggleShuffle"
         @updateseek="setSeek">
         </player-controls-bars>
+        <Test></Test>
         <player-playlist-panel
         :playlist="playlist"
         :selectedTrack="selectedTrack"
@@ -29,8 +30,8 @@
         </player-search-bar>
       </v-container>
     </v-content>
-    <Test></Test>
-    <!-- <TestAn></TestAn> -->
+    <!-- <Test>
+    </Test> -->
   </v-app>
 </template>
 
