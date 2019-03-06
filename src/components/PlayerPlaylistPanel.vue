@@ -35,7 +35,7 @@
 
 <style scoped>
   .selected {
-    background-color:  orange !important;
+    background-color:  RoyalBlue!important;
   }
   .even {
     background-color: #505050

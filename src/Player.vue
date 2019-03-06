@@ -30,6 +30,7 @@
       </v-container>
     </v-content>
     <Test></Test>
+    <TestAn></TestAn>
   </v-app>
 </template>
 
@@ -40,6 +41,8 @@
   import PlayerInfoPanel from './components/PlayerInfoPanel.vue'
   import PlayerSearchBar from './components/PlayerSearchBar.vue'
   import Test from './components/Test.vue'
+  import TestAn from './components/TestAn.vue'
+
 
 
   export default {
@@ -49,7 +52,8 @@
       PlayerControlsBars,
       PlayerInfoPanel,
       PlayerSearchBar,
-      Test
+      Test,
+      TestAn
     },
     data () {
       return {
@@ -146,9 +150,9 @@
           return
         } else {
           track.play()
-          function setup(){
-          createCanvas(640,480);
-          }
+          // function setup(){
+          // createCanvas(640,480);
+          // }
 
           // function draw() {
           //   if(selectedTrack!= 0) {

@@ -2,15 +2,16 @@
   <div>
     <!-- <vue-p5 v-on="{ setup, draw, keypressed }"></vue-p5> -->
     <p>
-      Red: {{ red }} <br/>
+      <!-- Red: {{ red }} <br/>
       Green: {{ green }} <br/>
-      Blue: {{ blue }} <br/>
+      Blue: {{ blue }} <br/> -->
+      test component
     </p>
-    <p>
+      <!-- <p>
       Press <button @click="toggleRed()">button</button> to toggle red color <br/>
       Press <code>g</code> to toggle green color <br/>
       Use mouse to draw lines <br/>
-    </p>
+    </p> -->
   </div>
 </template>
 
@@ -35,7 +36,7 @@ export default {
     setup(sketch) {
       sketch.createCanvas(400, 400);
     },
-    draw(sketch) {
+    sketch(sketch) {
       sketch.draw = () => {
         this.blue = (this.blue + 3) % 255;
         const { red, green, blue } = this;

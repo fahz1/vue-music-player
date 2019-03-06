@@ -1,14 +1,19 @@
 import Vue from 'vue'
 import Vuetify from 'vuetify'
 import 'vuetify/dist/vuetify.css'
+import VueAnime from 'vue-animejs'
+import VueAnimeGroup from 'vue-animejs'
+import VueAnimeTimeLine from 'vue-animejs'
+
 import Player from './Player.vue'
+// import anime from 'animejs';
 
 import VueHowler from 'vue-howler'
 import router from './router'
 import {Howl, Howler} from 'howler'
 
-
 Vue.use(Vuetify)
+Vue.use(VueAnime)
 
 Vue.filter('numbers', (value) => {
   let number = value + 1
