@@ -35,10 +35,10 @@
 
 <style scoped>
   .selected {
-    background-color:  RoyalBlue!important;
+    background-color:  #00FFFF!important;
   }
   .even {
-    background-color: #505050
+    background-color: #FFE4B5
   }
   .playlist {
     overflow: auto

@@ -1,42 +1,95 @@
 <template>
-  <div style="margin-top: 72px;">
-    <b-container>
-      <div ref="canvas"></div>
-      <b-btn>Change color</b-btn>
-    </b-container>
-  </div>
+  <canvas ref="waves"></canvas>
 </template>
+
 <script>
+import * as SineWaves from 'sine-waves'
 export default {
-  data: function () {
-    return {
-      script: null,
-      ps: null,
-      x: 0,
-      y: 0,
-      canvas: null
+  methods: {
+    waves() {
+      var waves = new SineWaves({
+        el: this.$refs.waves,
+        speed: 20,
+        ease: 'SineInOut',
+        wavesWidth: '90%',
+        waves: [
+          {
+            timeModifier: 4,
+            lineWidth: 2,
+            amplitude: -25,
+            wavelength: 25
+          },
+          {
+            timeModifier: 2,
+            lineWidth: 2,
+            amplitude: -10,
+            wavelength: 30
+          },
+          {
+            timeModifier: 1,
+            lineWidth: 7,
+            amplitude: -30,
+            wavelength: 30
+          },
+          {
+            timeModifier: 3,
+            lineWidth: 3,
+            amplitude: 40,
+            wavelength: 40
+          },
+          {
+            timeModifier: 0.5,
+            lineWidth: 5,
+            amplitude: -60,
+            wavelength: 60
+          },
+          {
+            timeModifier: 1.3,
+            lineWidth: 5,
+            amplitude: -40,
+            wavelength: 70
+          },
+          {
+            timeModifier: 0.5,
+            lineWidth: 200,
+            amplitude: -60,
+            wavelength: 40
+          },
+          {
+            timeModifier: 1.3,
+            lineWidth: 5,
+            amplitude: -40,
+            wavelength: 70
+          }
+        ],
+        // Called on window resize
+        resizeEvent: function() {
+          var gradient = this.ctx.createLinearGradient(0, 0, this.width, 0)
+          gradient.addColorStop(0, 'rgba(25, 255, 255, 0)')
+          gradient.addColorStop(0.5, 'rgba(255, 25, 255, 0.75)')
+          gradient.addColorStop(1, 'rgba(255, 255, 25, 0')
+          var index = -1
+          var length = this.waves.length
+          while (++index < length) {
+            this.waves[index].strokeStyle = gradient
+          }
+          // Clean Up
+          index = void 0
+          length = void 0
+          gradient = void 0
+        }
+      })
     }
   },
-  mounted () {
-    this.script = p => {
-      this.x = 100
-      this.y = 100
-
-      p.setup = _ => {
-        this.canvas = p.createCanvas(600, 420)
-        this.canvas.parent(this.$refs.canvas)
-        p.frameRate(60)
-      }
-
-      p.draw = _ => {
-        p.background(0)
-        p.fill(255)
-        p.rect(this.x, this.y, 50, 50)
-      }
-    }
-    const P5 = require('p5')
-    this.ps = new P5(this.script)
-    console.log(this.ps)
+  mounted() {
+    this.waves()
   }
 }
 </script>
+
+<style scoped>
+canvas {
+  height: 100px;
+  width: 900px;
+}
+</style>

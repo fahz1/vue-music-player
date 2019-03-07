@@ -1,7 +1,13 @@
 <template>
-  <v-app dark>
-    <v-content>
-      <v-container>
+  <v-app light>
+    <v-content style="
+    background: #004e92;
+    ">
+      <v-container style="
+    background: #4B0082;
+    background: -webkit-linear-gradient(to right, #000428, #004e92, #000428);
+    background: linear-gradient(to right, #000428, #004e92, #000428);
+  ">
         <player-title-bar></player-title-bar>
         <player-info-panel
         :trackInfo="getTrackInfo">
@@ -18,7 +24,8 @@
         @toggleshuffle="toggleShuffle"
         @updateseek="setSeek">
         </player-controls-bars>
-        <Test></Test>
+        <!-- <Test></Test> -->
+        <TestAn></TestAn>
         <player-playlist-panel
         :playlist="playlist"
         :selectedTrack="selectedTrack"
@@ -30,7 +37,6 @@
         </player-search-bar>
       </v-container>
     </v-content>
-    <!-- <TestAn></TestAn> -->
   </v-app>
 </template>
 

@@ -11,8 +11,20 @@ import Player from './Player.vue'
 import VueHowler from 'vue-howler'
 import router from './router'
 import {Howl, Howler} from 'howler'
+import AudioVisual from 'vue-audio-visual'
 
-Vue.use(Vuetify)
+Vue.use(AudioVisual)
+
+Vue.use(Vuetify, {
+  theme: {
+    primary: '#004e92',
+    secondary: '#FF00FF',
+    accent: '#8c9eff',
+    error: '#b71c1c',
+    info: '#4B0082',
+
+  }
+})
 Vue.use(VueAnime)
 
 Vue.filter('numbers', (value) => {
