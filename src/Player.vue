@@ -64,12 +64,12 @@
     data () {
       return {
         playlist: [
-          {title: "Cambo_01_Start", artist: "Ask Again", howl: null, display: true},
-          {title: "Cambo_02_Start", artist: "Ask Again", howl: null, display: true},
-          {title: "Cambo_03_Start", artist: "Ask Again", howl: null, display: true},
-          {title: "Cambo_04_Start", artist: "Ask Again", howl: null, display: true},
-          {title: "Cambo_05_Start", artist: "Ask Again", howl: null, display: true},
-          {title: "Cambo_06_Start", artist: "Ask Again", howl: null, display: true}
+          {title: "Sunday_Afternoon", artist: "The Ventures", howl: null, display: true},
+          {title: "Solitude", artist: "Acoustic Alchemy", howl: null, display: true},
+          {title: "Flowing", artist: "Liz Story", howl: null, display: true},
+          {title: "Earnest", artist: "Joemy Wilson", howl: null, display: true},
+          {title: "Atmospheric", artist: "Robin Speilberg", howl: null, display: true},
+          {title: "Dramatic", artist: "Richard Wright", howl: null, display: true}
         ],
         selectedTrack: null,
         index: 0,
