@@ -14,6 +14,7 @@ export default {
         wavesWidth: '90%',
         waves: [
           {
+            type: 'Square',
             timeModifier: 4,
             lineWidth: 2,
             amplitude: -25,
